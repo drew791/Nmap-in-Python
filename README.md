@@ -12,7 +12,7 @@ If you're ever gonna use this tool, it's for **EXPLICITLY AUTHORIZED TARGETS ONL
 ## 🖥️ VM Set-up UTM and Metasploitable 2 (for macOS users)
 If you're going to use this tool and want to test it in a safe environment, I highly recommend you to get a virtual machine, especially one like Metasploitable which has flaws designed on purpose for you to exploit. You'll obviously need to install a virtualization software to run the VM. The best ones are Oracle VirtualBox, VMware (Workstation for Windows and Linux, Fusion for macOS), UTM (specifically optimized for macOS) and GNOME (for Linux). Personally, the only one that worked for me to run Metasploitable 2 was UTM, so here's a quick tutorial for you macOS users (please note I have an Apple Silicon chip, so this guide might not work for Intel).
 
-### Installing and setting up Metasploitable in UTM
+### Installing and setting up Metasploitable in UTM for macOS users (optional)
 
 1. Install UTM on the App Store
 2. Install [Metasploitable 2](https://www.rapid7.com/products/metasploit/metasploitable/) on this link (or use another one if you want)
@@ -27,8 +27,25 @@ If you're going to use this tool and want to test it in a safe environment, I hi
 ### Using Metasploitable
 
 You'll need to log in once you boot the VM (both the username and the password are "msfadmin"). Then, you'll need to know the VM's IP address. Here's the command:
-```bash
 
+```bash
 msfadmin@metasploitable:~$ ifconfig
 ```
+
 You'll see two main blocks, but we'll only need the one called "eth0". In it, find  ```inet addr```: it's the IP address we're going to use.
+
+## 🤔 How to use this tool
+When you call the "main.py" script, you'll be prompted to enter the host you want to scan's IP address:
+
+```shell
+Last login: Sun Nov 22 19:00:00 on console
+drew@myMAC ~ $ python main.py
+Process initialized on "main.py"
+Enter host to scan: 
+```
+
+Now, when you enter the host and it is valid, you'll get a full scan. Also, you can follow the process in the "log.txt" file. To see the scan's result, open the "scan_result.json" file. **Note**: at every scan, if the file contained something, it will get overwritten by the new scan. To avoid so, rename the file, so the new scan creates another file.
+
+
+
+
