@@ -67,5 +67,3 @@ if __name__ == '__main__':
     except Exception as e:
         logger.exception(e)
         lprint('info', 'Process exited because an exception was encountered.\n')
-
-# grazie claude
